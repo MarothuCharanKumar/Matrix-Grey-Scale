@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src ="test.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>THE CALCULATION OF GLCM</title>
+	<div class="header">
+  <h1>||-- GLCM MATRIX --||</h1>
+  <p>Calculation of grey level co-occurence matrix</p>
+  <p>Click button Sequentially to perform actions</p>
+</div>
+</head>
+
+<body>
+<table id="myTable" border="1"> 
+</table>
+<form> 
+<input type="button" class="button_css" onclick="createMatrix()" value="Generate Matrix"> 
+</form>
+<button type="button" onclick="show()" id="btnId">Angle 0 and 45
+	</button>
+	<input id="toggleVisibilityButton" type="button" value="GLCMS"/>
+<table  id="drst" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+    <tr align="center">
+                  <td class="lbl">co</td>
+            <td class="lbl">co</td>
+            <td class="lbl">co</td>
+            <td class="lbl">co</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">1</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+</table> 
+<script>
+document.getElementById("toggleVisibilityButton").addEventListener("click", function(button) {    
+   if (document.getElementById("drst").style.display === "none") 
+   	document.getElementById("drst").style.display = "block";
+   else document.getElementById("drst").style.display = "none";
+});
+</script>
+<p>Corresponding d selected</p>
+<button type="button" onclick="show()" id="btnId">Angle 90 and 135
+	</button>
+	<input id="mlsp" type="button" value="GLCMS"/>
+<table  id="stey" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+    <tr align="center">
+            <td class="lbl">rc</td>
+            <td class="lbl">rc</td>
+            <td class="lbl">rc</td>
+            <td class="lbl">rc</td>
+            <td class="lbl">rc</td>
+            <td class="lbl">rc</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+             	<td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+</table> 
+<script>
+document.getElementById("mlsp").addEventListener("click", function(button) {    
+   if (document.getElementById("stey").style.display === "none") 
+   	document.getElementById("stey").style.display = "block";
+   else document.getElementById("stey").style.display = "none";
+});
+</script>
+<script>
+highlight_row();
+function highlight_row() {
+    var table = document.getElementById('drst');
+    var cells = table.getElementsByTagName('td');
+
+    for (var i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        cell.onclick = function () {
+            var rowId = this.parentNode.rowIndex;
+
+            var rowsNotSelected = table.getElementsByTagName('tr');
+            for (var row = 0; row < rowsNotSelected.length; row++) {
+                rowsNotSelected[row].style.backgroundColor = "";
+                rowsNotSelected[row].classList.remove('selected');
+            }
+            var rowSelected = table.getElementsByTagName('tr')[rowId];
+            rowSelected.style.backgroundColor = "yellow";
+            rowSelected.className += " selected";
+
+            msg = 'The row is: ' + rowSelected.cells[0].innerHTML;
+            msg += '\nThe col cell value is: ' + this.innerHTML;
+            alert(msg);
+        }
+    }
+
+}
+</script>
+</body>
+</html>
